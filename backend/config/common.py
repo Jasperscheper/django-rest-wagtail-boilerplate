@@ -10,6 +10,26 @@ class Common(Configuration):
 
     INSTALLED_APPS = (
         'django.contrib.admin',
+
+        'cms',
+
+        # Wagtail
+        
+        'wagtail.contrib.forms',
+        'wagtail.contrib.redirects',
+        'wagtail.embeds',
+        'wagtail.sites',
+        'wagtail.users',
+        'wagtail.snippets',
+        'wagtail.documents',
+        'wagtail.images',
+        'wagtail.search',
+        'wagtail.admin',
+        'wagtail.core',
+        
+        'taggit',
+        'modelcluster',
+        
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
@@ -25,6 +45,7 @@ class Common(Configuration):
         # Your apps
         'backend.users',
 
+
     )
 
     # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
@@ -36,6 +57,7 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     )
 
     ALLOWED_HOSTS = ["*"]
